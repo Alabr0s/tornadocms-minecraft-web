@@ -1,0 +1,256 @@
+:root {
+    --primary-color: #ffd700;
+    --primary-hover: #ffb700;
+    --text-color: #ffffff;
+    --bg-color: #0f1015;
+    --box-bg: #1a1b26;
+    --border-color: rgba(255, 215, 0, 0.1);
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --input-bg: rgba(26, 27, 38, 0.95);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #1f2937, #111827);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.install-container {
+    width: 100%;
+    max-width: 900px;
+    background: var(--box-bg);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+}
+
+.install-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary-color), #ffa500, #ff8c00);
+}
+
+.install-header {
+    padding: 2.5rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.install-logo {
+    height: 60px;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.2));
+}
+
+.install-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #ffd700, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.install-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+}
+
+.install-steps {
+    display: flex;
+    justify-content: center;
+    padding: 1.25rem;
+    background: rgba(0, 0, 0, 0.2);
+    gap: 2rem;
+    position: relative;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.step-item.active {
+    opacity: 1;
+}
+
+.step-number {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    position: relative;
+    z-index: 1;
+}
+
+.step-item.active .step-number {
+    background: linear-gradient(135deg, #ffd700, #ffa500);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.install-content {
+    padding: 2.5rem;
+}
+
+.welcome-step, .database-step, .settings-step, .admin-step {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.requirement-item {
+    background: var(--input-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.requirement-item:hover {
+    transform: translateX(5px);
+}
+
+.requirement-item.success {
+    border-left: 4px solid var(--success-color);
+}
+
+.requirement-item.error {
+    border-left: 4px solid var(--error-color);
+}
+
+.requirement-item i {
+    font-size: 1.25rem;
+}
+
+.install-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #9ca3af;
+}
+
+.form-group input {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.back-btn, .next-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.back-btn {
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+.next-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.back-btn:hover {
+    background: rgba(55, 65, 81, 0.8);
+}
+
+.next-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 4px solid var(--error-color);
+    color: #fca5a5;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .install-container {
+        border-radius: 0;
+        margin: 0;
+    }
+    
+    .install-steps {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+    
+    .back-btn, .next-btn {
+        width: 100%;
+        justify-content: center;
+    }
+} 
