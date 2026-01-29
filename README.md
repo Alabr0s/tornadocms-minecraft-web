@@ -2,6 +2,9 @@
 
 Modern ve kullanıcı dostu bir Minecraft sunucu yönetim sistemi.
 
+Bu scriptin marketini kullanmak için ozaiithejava tarafından yapılmış olan özel ekletiyi kullanmanız gerekir !
+Proje Linki: https://github.com/ozaiithejava/SlimeOSMarket
+
 ## ✨ Özellikler
 
 ### 🖥️ Çoklu Sunucu Desteği
